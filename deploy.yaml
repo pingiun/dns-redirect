@@ -1,0 +1,39 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: redirector
+  labels:
+    app: redirector
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: redirector
+  template:
+    metadata:
+      labels:
+        app: redirector
+    spec:
+      containers:
+      - name: redirector
+        image: eu.gcr.io/telegram-bots-179510/redirector
+        env:
+        - name: LISTEN_ADDR
+          value: 0.0.0.0:9376
+        - name: RUST_LOG
+          value: main=info
+        ports:
+        - containerPort: 9376
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: redirector-service
+spec:
+  selector:
+    app: redirector
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9376
