@@ -43,7 +43,7 @@ If you want to host the rust service yourself you can take these steps:
 2. Build the project with `cargo build --release` or with docker: `docker build -t redirector .`
 3. When running the program, supply the `LISTEN_ADDR` environment variable, for example:
 ```terminal
-LISTEN_ADDR=localhost:8080 target/release/redirector
+LISTEN_ADDR=localhost:8080 RUST_LOG=main=info target/release/redirector
 ```
 or in docker (example uses the docker hub version):
 ```terminal
