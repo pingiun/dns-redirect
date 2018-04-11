@@ -1,5 +1,5 @@
 # Redirector
-Rust service for redirecting based on a _redirect. TXT record.
+Rust service for redirecting based on a _redirect TXT record.
 
 ## Who is this for?
 If you just bought a domain but have not set up a webserver yet, you can use 
