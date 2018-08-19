@@ -9,6 +9,7 @@ but you can use 301.systems if your registrar does not.
 ## How to use the 301.systems service.
 1. If your dns provider supports CNAME records for a root domain, set up a 
 CNAME to `301.systems`. Otherwise use an A record that points to `195.201.249.96` (new ip!).
+You can also create an AAAA record with this ipv6 address: `2a01:4f8:1c1c:31c8::1`.
 
 2. Set up a TXT record for _redirect.yourdomain.tld. The TXT record should
 contain a valid URL to the site that you want to be redirected to. For example:
@@ -49,6 +50,8 @@ or in docker (example uses the docker hub version):
 ```terminal
 docker run -e LISTEN_ADDR=0.0.0.0:80 -p 80:80 -d pingiun/redirector
 ```
+
+If you want to run on ipv6 as well (or any other address), you can supply the `LISTEN_ADDR_6` environment variable.
 
 ## Deploying on kubernetes
 This project has supplied a kubernetes deployment to run redirector with 3 replicas. You can change the deploy.yaml file to your needs and create the deployment with `kubectl create -f deploy.yaml`.
