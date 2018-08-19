@@ -1,9 +1,9 @@
-FROM rust:1.25.0
+FROM rust:1.28.0
 
 WORKDIR /usr/src/redirector
 COPY . .
 
-RUN cargo install
+RUN cargo install --path .
 
 ENV RUST_LOG main=info
 
