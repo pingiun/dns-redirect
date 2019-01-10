@@ -7,8 +7,8 @@ If you just bought a domain but have not set up a webserver yet, you can use
 but you can use 301.systems if your registrar does not.
 
 ## How to use the 301.systems service.
-1. If your dns provider supports CNAME records for a root domain, set up a 
-CNAME to `301.systems`. Otherwise use an A record that points to `195.201.249.96` (new ip!).
+1. If your dns provider supports CNAME records for a root domain, or you want to set up a subdomain, make a 
+CNAME for `301.systems`. Otherwise use an A record that points to `195.201.249.96`.
 You can also create an AAAA record with this ipv6 address: `2a01:4f8:1c1c:31c8::1`.
 
 2. Set up a TXT record for _redirect.yourdomain.tld. The TXT record should
