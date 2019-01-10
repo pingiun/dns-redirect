@@ -5,6 +5,6 @@ COPY . .
 
 RUN cargo install --path .
 
-ENV RUST_LOG main=info
+ENV RUST_LOG redirector=info
 
 CMD ["redirector"]
