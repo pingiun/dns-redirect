@@ -1,6 +1,7 @@
 [package]
 name = "redirector"
 version = "0.2.0"
+license = "AGPL-3.0-or-later"
 authors = ["Jelle Besseling <jelle@pingiun.com>"]
 
 [dependencies]
