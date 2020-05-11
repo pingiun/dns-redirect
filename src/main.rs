@@ -67,7 +67,7 @@ fn get_location_url(url: &str, line: &str) -> (String, StatusCode) {
 }
 
 fn redirector_response(req: Request<Body>, client: &AsyncResolver) 
-    -> Box<Future<Item=Response<Body>, Error=hyper::Error> + Send> 
+    -> Box<dyn Future<Item=Response<Body>, Error=hyper::Error> + Send>
 {
     let host = match req.headers().get(HOST) {
         None => return Box::new(futures::future::ok(Response::builder().status(StatusCode::BAD_REQUEST).body(Body::from("No Host header")).unwrap())),
