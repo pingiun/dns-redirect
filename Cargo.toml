@@ -6,7 +6,7 @@ authors = ["Jelle Besseling <jelle@pingiun.com>"]
 
 [dependencies]
 futures = "0.1.14"
-hyper = "0.12.8"
+hyper = "0.14.12"
 trust-dns-resolver = "0.10.2"
 tokio-core = "0.1.16"
 log = "0.4.6"
